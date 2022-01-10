@@ -12,28 +12,28 @@ public class ForestMenu {
         Squirrel s4 = new Squirrel(3, 6, "Ogge", true, 8);
         Squirrel s5 = new Squirrel(4, 7, "Urre", true, 12);
 
-        PineTree p1 = new PineTree(35, 200, "pinus", o1, 73);
+        Pine p1 = new Pine(Pinus, 35, "75",  o1, 73);
         p1.addSquirrel(s1);
         p1.addSquirrel(s2);
         p1.addSquirrel(s3);
         p1.addSquirrel(s4);
         p1.addSquirrel(s5);
 
-        Svamp sv1 = new Svamp("Kantarell", 20, 5);
-        Svamp sv2 = new Svamp("Karl-Johan", 12, 4);
-        Svamp sv3 = new Svamp("Kantkremla", 23, 6);
+        Fungus sv1 = new Fungus("Kantarell", 20, 5);
+        Fungus sv2 = new Fungus("Karl-Johan", 12, 4);
+        Fungus sv3 = new Fungus("Kantkremla", 23, 6);
 
-        p1.addSvamp(sv1);
-        p1.addSvamp(sv2);
-        p1.addSvamp(sv3);
+        p1.addFungus(sv1);
+        p1.addFungus(sv2);
+        p1.addFungus(sv3);
 
-        Växt v1 = new Växt("Blåbär", 188, 5);
-        Växt v2 = new Växt("Lingon", 232, 6);
-        Växt v3 = new Växt("Skogsstjärna", 21, 12);
+        Plant v1 = new Plant("Blåbär", 188, 5);
+        Plant v2 = new Plant("Lingon", 232, 6);
+        Plant v3 = new Plant("Skogsstjärna", 21, 12);
 
-        p1.addVäxt(v1);
-        p1.addVäxt(v2);
-        p1.addVäxt(v3);
+        p1.addPlant(v1);
+        p1.addPlant(v2);
+        p1.addPlant(v3);
 
 
         while (true) {
@@ -92,7 +92,7 @@ public class ForestMenu {
                 }
                 System.out.println();
                 System.out.println("and these mushrooms: ");
-                for (Svamp s : p1.getSvampar()) {
+                for (Fungus s : p1.getFungus()) {
                     System.out.print(s.getType() + " ");
                 }
 

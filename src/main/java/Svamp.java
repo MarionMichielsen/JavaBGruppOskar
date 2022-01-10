@@ -1,10 +1,10 @@
-public class Svamp {
+public class Fungus {
     private String type;
     private int number;
     private int height;
 
 
-    public Svamp(String type, int number, int height){
+    public Fungus(String type, int number, int height){
         super();
         setNumber(number);
         setHeight(height);
