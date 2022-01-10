@@ -61,7 +61,6 @@ public class Squirrel {
         int conesCollected = rand.nextInt(10);
         numOfConesInNest += conesCollected;
         return conesCollected;
-
     }
 
     private int age;

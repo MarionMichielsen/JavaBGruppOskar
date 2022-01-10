@@ -4,22 +4,23 @@ public class PineTree {
     private int age;
     private int height;
     private String latinName;
-   private  ArrayList<Squirrel> squirrels = new ArrayList<Squirrel>();
-    private ArrayList<Växt> växter = new ArrayList<Växt>();
-    private ArrayList<Svamp> svampar = new ArrayList<Svamp>();
+   private final ArrayList<Squirrel> squirrels = new ArrayList<Squirrel>();
+    private final ArrayList<Växt> plants = new ArrayList<Växt>();
+    private final ArrayList<Svamp> svampar = new ArrayList<Svamp>();
     private Owl owl;
     private int numOfCones;
 
     public ArrayList<Squirrel> getSquirrels() {
         return squirrels;
     }
-    public ArrayList<Växt> getVäxter() {
-    return växter;
+    public ArrayList<Växt> getPlants() {
+    return plants;
     }
+
     public ArrayList<Svamp> getSvampar(){
         return svampar;
     }
-}
+
 
     public void addSquirrel(Squirrel s){
         squirrels.add(s);
@@ -30,7 +31,7 @@ public class PineTree {
     }
 
     public void addVäxt(Växt v){
-        växter.add(v);
+        plants.add(v);
     }
 
     public int getHeight() {
@@ -74,7 +75,12 @@ public class PineTree {
     }
 
 public PineTree(int age, int height, String latinName, Owl owl, int numOfCones){
+    setAge(age);
+    setHeight(height);
+    setLatinName(latinName);
+    setOwl(owl);
+    setNumOfCones(numOfCones);
 
 }
 
-
+}
