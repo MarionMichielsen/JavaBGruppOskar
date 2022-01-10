@@ -1,9 +1,9 @@
-public class Växt {
+public class Plant {
     private String type;
     private int number;
     private int height;
 
-    public Växt (String type, int number, int height){
+    public Plant (String type, int number, int height){
         super();
         setNumber(number);
         setHeight(height);

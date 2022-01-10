@@ -5,20 +5,20 @@ public class PineTree {
     private int height;
     private String latinName;
    private final ArrayList<Squirrel> squirrels = new ArrayList<Squirrel>();
-    private final ArrayList<Växt> plants = new ArrayList<Växt>();
-    private final ArrayList<Svamp> svampar = new ArrayList<Svamp>();
+    private final ArrayList<Plant> plants = new ArrayList<Plant>();
+    private final ArrayList<Fungus> fungus = new ArrayList<Fungus>();
     private Owl owl;
     private int numOfCones;
 
     public ArrayList<Squirrel> getSquirrels() {
         return squirrels;
     }
-    public ArrayList<Växt> getPlants() {
+    public ArrayList<Plant> getPlants() {
     return plants;
     }
 
-    public ArrayList<Svamp> getSvampar(){
-        return svampar;
+    public ArrayList<Fungus> getFungus(){
+        return fungus;
     }
 
 
@@ -26,11 +26,11 @@ public class PineTree {
         squirrels.add(s);
     }
 
-    public void addSvamp(Svamp sv){
-        svampar.add(sv);
+    public void addFungus(Fungus sv){
+        fungus.add(sv);
     }
 
-    public void addVäxt(Växt v){
+    public void addPlant(Plant v){
         plants.add(v);
     }
 
