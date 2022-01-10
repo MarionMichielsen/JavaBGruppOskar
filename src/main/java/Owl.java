@@ -6,12 +6,23 @@ public class Owl {
     private boolean hungry;
     private int wingSpan;
     private int heightAboveGround;
+    private int weight;
 
-    public Owl(int age, int wingSpan, int heightAboveGround, boolean hungry) {
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public Owl(int age, int weight, int wingSpan, int heightAboveGround, boolean hungry) {
+        super();
         setAge(age);
         setWingSpan(wingSpan);
         setHeightAboveGround(heightAboveGround);
         setHungry(hungry);
+        setWeight(weight);
     }
 
     public void setAge(int age) {
@@ -36,13 +47,14 @@ public class Owl {
 
     public boolean eat(){
         Random rand = new Random();
-        int hungryOrNot = rand.nextInt(2);
-        if (hungryOrNot == 0){
+        int runOrNot = rand.nextInt(2);
+        if (runOrNot == 0){
             heightAboveGround = 0;
+            weight ++;
             hungry = true;
             return true;
         }
-        System.out.println("The owl was hungry, but the squirrels noticed the owl and escaped!");
+        System.out.println("The owl wanted to eat the squirrel, but the squirrel ran away!");
             return false;
         }
 

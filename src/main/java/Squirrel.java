@@ -2,6 +2,15 @@ import java.sql.SQLOutput;
 import java.util.Random;
 
 public class Squirrel {
+    public Squirrel(int weight, int age, String name, boolean hungry, int numOfConesInNest) {
+        super();
+        setNumOfConesInNest(numOfConesInNest);
+        setWeight(weight);
+        setAge(age);
+        setName(name);
+        setHungry(hungry);
+    }
+
     public String getName(){
         return name;
     }
@@ -47,6 +56,14 @@ public class Squirrel {
         }
     }
 
+    public int collectCones(){
+        Random rand = new Random();
+        int conesCollected = rand.nextInt(10);
+        numOfConesInNest += conesCollected;
+        return conesCollected;
+
+    }
+
     private int age;
     private String name;
     private boolean hungry;
@@ -55,14 +72,7 @@ public class Squirrel {
 
 
 
-    public Squirrel(int weight, int age, String name, boolean hungry, int numOfConesInNest) {
-    setNumOfConesInNest(numOfConesInNest);
-    setWeight(weight);
-    setAge(age);
-    setName(name);
-    setHungry(hungry);
 
-    }
 
 
 }
