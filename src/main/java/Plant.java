@@ -1,13 +1,13 @@
-public class Plant {
-    private String type;
-    private int number;
+public class Plant extends Food{
+   // private String type;
+  //  private int number;
     private int height;
 
     public Plant (String type, int number, int height){
-        super();
-        setNumber(number);
+        super(number, type);
+       // setNumber(number);
         setHeight(height);
-        setType(type);
+       // setType(type);
 
     }
 
@@ -18,7 +18,7 @@ public class Plant {
     public void setHeight(int height) {
         this.height = height;
     }
-
+/*
     public int getNumber() {
         return number;
     }
@@ -33,5 +33,5 @@ public class Plant {
 
     public void setType(String type) {
         this.type = type;
-    }
+    }*/
 }

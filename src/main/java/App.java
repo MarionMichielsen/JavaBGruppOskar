@@ -4,8 +4,11 @@ import java.util.concurrent.ForkJoinPool;
 public class App {
     public static void main(String[] args) {
 
-        ForestMenu start = new ForestMenu();
-        start.run();
+      //  ForestMenu start = new ForestMenu();
+      //  start.run();
+
+        Uppgift2 uppgift2 = new Uppgift2();
+        Uppgift2.run();
 
     }
 

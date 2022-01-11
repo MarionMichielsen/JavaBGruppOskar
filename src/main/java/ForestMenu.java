@@ -4,90 +4,110 @@ import java.util.Random;
 public class ForestMenu {
 
     public static void run() {
-        Scanner userResponse = new Scanner(System.in);
-        Owl o1 = new Owl(3, 5, 180, 230, true);
-        Squirrel s1 = new Squirrel(1, 2, "Orre", false, 23);
-        Squirrel s2 = new Squirrel(2, 4, "Korre", true, 56);
-        Squirrel s3 = new Squirrel(1, 5, "Kurre", false, 48);
-        Squirrel s4 = new Squirrel(3, 6, "Ogge", true, 8);
-        Squirrel s5 = new Squirrel(4, 7, "Urre", true, 12);
+        boolean userResponseForestFire = true;
+        double windMpS = 8.2;
+        String  pineNameAnswer = "pinus";
+        int pineAge = 103;
 
-        PineTree p1 = new PineTree(35, 200, "pinus", o1, 73);
+
+        Scanner userResponse = new Scanner(System.in);
+        Animal o1 = new Owl(3, 5, 180, 230, true);
+        Animal s1 = new Squirrel(1, 2, "Orre", false, 23);
+        Animal s2 = new Squirrel(2, 4, "Korre", true, 56);
+        Animal s3 = new Squirrel(1, 5, "Kurre", false, 48);
+        Animal s4 = new Squirrel(3, 6, "Ogge", true, 8);
+        Animal s5 = new Squirrel(4, 7, "Urre", true, 12);
+
+        Pine p1 = new Pine("Pinus", 200, 103, o1, 2.9, false);
         p1.addSquirrel(s1);
         p1.addSquirrel(s2);
         p1.addSquirrel(s3);
         p1.addSquirrel(s4);
         p1.addSquirrel(s5);
 
-        Fungus sv1 = new Fungus("Kantarell", 20, 5);
+        Fungus sv1 = new Fungus("Chanterelle", 20, 5);
         Fungus sv2 = new Fungus("Karl-Johan", 12, 4);
-        Fungus sv3 = new Fungus("Kantkremla", 23, 6);
+        Fungus sv3 = new Fungus("Mushroom", 23, 6);
 
         p1.addFungus(sv1);
         p1.addFungus(sv2);
         p1.addFungus(sv3);
 
-        Plant v1 = new Plant("Blåbär", 188, 5);
-        Plant v2 = new Plant("Lingon", 232, 6);
-        Plant v3 = new Plant("Skogsstjärna", 21, 12);
+        Food v1 = new Plant("Blueberry", 188, 5);
+        Food v2 = new Plant("Lingon", 232, 6);
+        Food v3 = new Plant("Raspberry", 21, 12);
 
+        Food r1 = new Rat(4, "rat");
         p1.addPlant(v1);
         p1.addPlant(v2);
         p1.addPlant(v3);
 
 
         while (true) {
-            System.out.println("Meny:");
-            System.out.println("Vad vill du observera? Svara med 1, 2, 3, 4, 5.");
-            System.out.println("1. Tallen \n2. Ekorrarna \n3. Ugglan \n4. Vill du höra en historia? \n5.Exit");
+            System.out.println("Menu:");
+            System.out.println("What would you like to observe? Answer 1, 2, 3, 4, 5.");
+            System.out.println("1. Pine Tree \n2. Squirrels \n3. Owls \n4. " +
+                    "Would you like to read a story? \n5. Exit");
             int answer = userResponse.nextInt();
 
             if (answer == 1) {
-                System.out.println("Hur många år är trädet?");
-                int pineAge = userResponse.nextInt();
+                System.out.println("How old is the tree?");
+                pineAge = userResponse.nextInt();
                 if (pineAge >= 100) {
-                    System.out.println("Det var ett gammalt träd.");
+                    System.out.println("That's an old tree.");
                 } else {
-                    System.out.println("Det var ett ungt träd.");
+                    System.out.println("That's a young tree.");
                 }
                 userResponse.nextLine();
-                System.out.println("Vet du vad det latinska namnet på tall är? Ledtråd: Det börjar på P och slutar på inus.");
-                String pineNameAnswer = userResponse.nextLine();
-                System.out.println("Hur många sekundmeter blåser det?");
-                double windMpS = userResponse.nextDouble();
-                System.out.println("Sista frågan, förekommer det en skogsbrand? true eller false");
-                boolean userResponseForestFire = userResponse.nextBoolean();
+                System.out.println("Do you know the latin name of the tree? Clue: It starts with P and end on inus.");
+                pineNameAnswer = userResponse.nextLine();
+                System.out.println("How many meters per second does the wind blow?");
+                windMpS = userResponse.nextDouble();
+                System.out.println("Last question: is there a forest fire? True or False.");
+                userResponseForestFire = userResponse.nextBoolean();
                 Owl owl = new Owl(15, 180, 233, 255, true);
                 Pine pine = new Pine(pineNameAnswer, 200, pineAge, owl, windMpS, userResponseForestFire);
-                System.out.println("Kommer tallen att falla? " + pine.willPineFall(pineAge, windMpS, userResponseForestFire));
+                System.out.println("Will the tree fall? " + pine.willPineFall(pineAge, windMpS, userResponseForestFire));
+                if (pine.willPineFall(pineAge, windMpS, userResponseForestFire ) && (userResponseForestFire)){
+                    System.out.println("The tree burned in the fire!");
+                    System.out.println("All the poor squirrels died....");
+                }
+                else if (pine.willPineFall(pineAge, windMpS, userResponseForestFire ) && (!userResponseForestFire)){
+                    System.out.println("The tree fell due to the strong wind");
+                    System.out.println("The squirrels moved to another tree.");
+                }
+                else if (!pine.willPineFall(pineAge, windMpS, userResponseForestFire)){
+                    System.out.println("The tree did not fall!");
+                }
+
             } else if (answer == 2) {
                 System.out.println("The number of Cones in the nest: ");
-                for (Squirrel s : p1.getSquirrels()) {
-                    System.out.print(s.getName() + " " + s.getNumOfConesInNest() + ", ");
-                    s.eat();
+                for (Animal s : p1.getSquirrels()) {
+                    System.out.print(((Squirrel)s).getName() + " " + ((Squirrel)s).getNumOfConesInNest() + ", ");
+                    s.eat(v1);
                 }
 
 
             } else if (answer == 3) {
                 System.out.println("Let's see if the owl will eat some of the squirrels");
-                if (o1.eat()) {
+                if (o1.eat(r1)) {
                     Random rand = new Random();
                     p1.getSquirrels().remove((rand.nextInt(5)));
                     System.out.println("After the owl ate one of the squirrels, these are left: ");
-                    for (Squirrel s : p1.getSquirrels()) {
-                        System.out.print(s.getName() + " ");
+                    for (Animal s : p1.getSquirrels()) {
+                        System.out.print(((Squirrel)s).getName() + " ");
                     }
                     System.out.println();
                 }
             } else if (answer == 4) {
                 System.out.println("It was a beautiful day in the fall. " +
                         "There was a forrest with a large pine tree. In the pine tree these squirrels lived: ");
-                for (Squirrel s : p1.getSquirrels()) {
-                    System.out.print(s.getName() + " ");
+                for (Animal s : p1.getSquirrels()) {
+                    System.out.print(((Squirrel)s).getName() + " ");
                 }
                 System.out.println();
                 System.out.println("There was also an owl named Uffe. Around the tree were these plants: ");
-                for (Plant v : p1.getPlants()) {
+                for (Food v : p1.getPlants()) {
                     System.out.print(v.getType() + " ");
                 }
                 System.out.println();
@@ -98,16 +118,35 @@ public class ForestMenu {
 
                 System.out.println();
                 System.out.println("Squirrel Orre went to collect cones. " +
-                        "He collected " + s1.collectCones() + " cones. That made his total: " + s1.getNumOfConesInNest());
+                        "He collected " + ((Squirrel)s1).collectCones() + " cones. That made his total: " + ((Squirrel)s1).getNumOfConesInNest());
                 System.out.println("Uffe the owl was hungry and got his eyes on a squirrel");
-                if (o1.eat()) {
+                if (o1.eat(r1)) {
                     Random rand = new Random();
                     p1.getSquirrels().remove((rand.nextInt(5)));
                     System.out.println("After the owl ate one of the squirrels, these are left: ");
-                    for (Squirrel s : p1.getSquirrels()) {
-                        System.out.print(s.getName() + " ");
+                    for (Animal s : p1.getSquirrels()) {
+                        System.out.print(((Squirrel)s).getName() + " ");
                     }
                     System.out.println();
+                }
+                Owl owl = new Owl(15, 180, 233, 255, true);
+                Pine pine = new Pine(pineNameAnswer, 200, pineAge, owl, windMpS, userResponseForestFire);
+                System.out.println("The weather then turned around. But will the tree stand up? ");
+                System.out.println("How many meters per second does the wind blow?");
+                windMpS = userResponse.nextDouble();
+                System.out.println("Last question: is there a forest fire? True or False.");
+                userResponseForestFire = userResponse.nextBoolean();
+
+                if (pine.willPineFall(pineAge, windMpS, userResponseForestFire ) && (userResponseForestFire)){
+                    System.out.println("The tree burned in the fire!");
+                    System.out.println("All the poor squirrels died in the fire");
+                }
+                else if (pine.willPineFall(pineAge, windMpS, userResponseForestFire ) && (!userResponseForestFire)){
+                    System.out.println("The tree fell due to the strong wind");
+                    System.out.println("The squirrels ran away to another tree.");
+                }
+                else if (!pine.willPineFall(pineAge, windMpS, userResponseForestFire)){
+                    System.out.println("The tree did not fall!");
                 }
             }
             else if (answer == 5){
