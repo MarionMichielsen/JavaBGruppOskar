@@ -6,11 +6,11 @@ import java.util.concurrent.ForkJoinPool;
 public class App {
     public static void main(String[] args) {
 
-      //  JavaBGruppOskarMarion.domain.ForestMenu start = new JavaBGruppOskarMarion.domain.ForestMenu();
-      //  start.run();
+       JavaBGruppOskarMarion.domain.ForestMenu start = new JavaBGruppOskarMarion.domain.ForestMenu();
+      start.run();
 
-        Uppgift2 uppgift2 = new Uppgift2();
-        Uppgift2.run();
+       // Uppgift2 uppgift2 = new Uppgift2();
+       // Uppgift2.run();
 
     }
 
