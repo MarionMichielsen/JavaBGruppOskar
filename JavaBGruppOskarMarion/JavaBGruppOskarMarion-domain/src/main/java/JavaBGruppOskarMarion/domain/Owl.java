@@ -18,13 +18,18 @@ public class Owl extends Animal{
         this.weight = weight;
     }*/
 
-    public Owl(int age, int weight, int wingSpan, int heightAboveGround, boolean hungry) {
+    /*public Owl(int age, int weight, int wingSpan, int heightAboveGround, boolean hungry) {
         super(weight, age, hungry);
        // setAge(age);
         setWingSpan(wingSpan);
         setHeightAboveGround(heightAboveGround);
       //  setHungry(hungry);
       //  setWeight(weight);
+    }*/
+
+    public Owl(String latinName, int wingSpan, int heightAboveGround) {
+        super()
+
     }
 /*
     public void setAge(int age) {

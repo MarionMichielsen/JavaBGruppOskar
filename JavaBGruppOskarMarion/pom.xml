@@ -33,7 +33,9 @@
 
     <modules>
         <module>JavaBGruppOskarMarion-domain</module>
+        <module>JavaBGruppOskarMarion-service</module>
         <module>JavaBGruppOskarMarion-service-impl</module>
+        <module>JavaBGruppOskarMarion-test</module>
     </modules>
 
     <dependencyManagement>

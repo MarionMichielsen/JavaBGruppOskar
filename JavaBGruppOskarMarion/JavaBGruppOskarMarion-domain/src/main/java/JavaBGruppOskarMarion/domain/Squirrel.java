@@ -4,23 +4,21 @@ import java.util.Random;
 
 public class Squirrel extends Animal {
 
-    private String name;
-    private int numOfConesInNest;
-
-    public Squirrel( int weight, int age, String name, boolean hungry, int numOfConesInNest) {
+    public Squirrel(int weight, int age, String name, boolean hungry, int numOfConesInNest) {
         super(weight, age, hungry);
         setNumOfConesInNest(numOfConesInNest);
         setName(name);
+
     }
 
    public String getName(){
         return name;
    }
 
-
     public void setNumOfConesInNest(int numOfConesInNest) {
         this.numOfConesInNest = numOfConesInNest;
     }
+
     public void setName(String name) {
            this.name = name;
     }
@@ -45,10 +43,10 @@ public class Squirrel extends Animal {
             System.out.println("Not hungry");
             return false;}
 
-
     }
 
-
+    private String name;
+    private int numOfConesInNest;
 
 
 }
