@@ -15,7 +15,7 @@ public class ForestMenu {
         boolean noDigit = true;
 
 
-        Animal o1 = new Owl(3, 5, 180, 230, true);
+        Animal o1 = new Owl("Uggla", 5, 180);
         Animal s1 = new Squirrel(1, 2, "Orre", false, 23);
         Animal s2 = new Squirrel(2, 4, "Korre", true, 56);
         Animal s3 = new Squirrel(1, 5, "Kurre", false, 48);
@@ -132,7 +132,7 @@ public class ForestMenu {
                             userResponse.nextLine();
                         }
 
-                    Owl owl = new Owl(15, 180, 233, 255, true);
+                    Owl owl = new Owl("Uggla", 180, 233);
                     Pine pine = new Pine(pineNameAnswer, 200, pineAge, owl, windMpS, userResponseForestFire);
                     System.out.println("Will the tree fall? " + pine.willPineFall(pineAge, windMpS, userResponseForestFire));
                     if (pine.willPineFall(pineAge, windMpS, userResponseForestFire) && (userResponseForestFire)) {
@@ -177,7 +177,7 @@ public class ForestMenu {
                             "He collected " + ((Squirrel) s1).collectCones() + " cones. That made his total: " + ((Squirrel) s1).getNumOfConesInNest());
                     System.out.println("Uffe the owl was hungry and got his eyes on a squirrel");
                     ifEat(o1, p1, r1);
-                    Owl owl = new Owl(15, 180, 233, 255, true);
+                    Owl owl = new Owl("Owly", 180, 233);
                     Pine pine = new Pine(pineNameAnswer, 200, pineAge, owl, windMpS, userResponseForestFire);
                     System.out.println("The weather then turned around. But will the tree stand up? ");
                     System.out.println("How many meters per second does the wind blow?");

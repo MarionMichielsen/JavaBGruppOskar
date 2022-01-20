@@ -19,7 +19,7 @@ public class Owl extends Animal{
     }*/
 
     public Owl(String latinName, int wingSpan, int heightAboveGround) {
-        super()
+        super();
 
     }
 
