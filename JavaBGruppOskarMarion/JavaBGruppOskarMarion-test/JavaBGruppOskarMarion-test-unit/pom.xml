@@ -6,26 +6,30 @@
 
     <parent>
         <groupId>se.sti</groupId>
-        <artifactId>JavaBGruppOskarMarion</artifactId>
+        <artifactId>JavaBGruppOskarMarion-test</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>JavaBGruppOskarMarion-service-impl</artifactId>
+
+    <artifactId>JavaBGruppOskarMarion-test-unit</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
-        <dependency>
-            <groupId>se.sti</groupId>
-            <artifactId>JavaBGruppOskarMarion-domain</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>se.sti</groupId>
-            <artifactId>JavaBGruppOskarMarion-service</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
 
+        <!-- project -->
+
+        <dependency>
+            <groupId>se.sti</groupId>
+            <artifactId>JavaGruppBOskarMarion-domain</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
     
 </project>

@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Uppgift2 {
     public static void run(){
-        Animal o1 = new Owl(3, 5, 180, 230, true);
+        Animal o1 = new Owl("Uggla", 5, 180);
         Animal s1 = new Squirrel(1, 2, "Orre", false, 23);
         Animal s2 = new Squirrel(2, 4, "Korre", true, 56);
         Animal s3 = new Squirrel(1, 5, "Kurre", false, 48);
